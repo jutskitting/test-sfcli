@@ -29,6 +29,9 @@
         devShell = pkgs.mkShell {
           buildInputs = [ defaultPackage.package pkgs.nodejs ];
           # buildInputs = [ pkgs.nodejs_20 ];
+	  shellHook = ''
+    export PATH=$PWD/node_modules/.bin:$PATH
+	  '';
         };
       }
     );
